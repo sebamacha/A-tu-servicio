@@ -1,0 +1,95 @@
+<div th:fragment="comment" class="container contenedor-experiencia-usuario">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link th:href="@{/css/comment.css}" rel="stylesheet" />
+
+  <style>
+    .rounded-circle img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card {
+      height: 450px; /* Altura fija para las tarjetas */
+    }
+
+    .card-body {
+      overflow: auto; /* Agregar barras de desplazamiento si el contenido excede el tamaño */
+    }
+  </style>
+</head>
+<body>
+  <div class="container contenedor-experiencia-usuario">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+      <!-- comentario 1 -->
+      <div data-aos="fade-down" class="col">
+        <div class="card rounded-card shadow-lg p-4 card-color" style="width: 18rem; overflow: hidden;">
+          <div class="rounded-circle">
+            <img src="data:image/jpeg;base64,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" class="card-img-top rounded-circle" alt="Imagen Redonda" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">María Pérez</h5>
+            <p class="card-text text-light">
+              Resuelvo todos los problemas de mi hogar rápido y con eficacia. ¡Los mejores profesionales garantizados!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- comentario 2 -->
+      <div data-aos="fade-down" class="col">
+        <div class="card rounded-card shadow-lg p-4 card-color" style="width: 18rem; overflow: hidden;">
+          <div class="rounded-circle">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6pbutMKGEw_A-Q4nUwMqjkoPh8onAeQFQBdd_lXRFo8dE34u6WYYyoYLC_waHCdX3KqM&usqp=CAU" class="card-img-top rounded-circle" alt="Imagen Redonda" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Roberto Gómez</h5>
+            <p class="card-text text-light">
+              Siempre confío en estos profesionales para solucionar los problemas en casa. ¡Excelente servicio!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- comentario 3 -->
+      <div data-aos="fade-down" class="col">
+        <div class="card rounded-card shadow-lg p-4 card-color" style="width: 18rem; overflow: hidden;">
+          <div class="rounded-circle">
+            <img src="https://tusimagenesde.com/wp-content/uploads/2017/09/foto-de-perfil-3.jpg" class="card-img-top rounded-circle" alt="Imagen Redonda" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Laura Rodríguez</h5>
+            <p class="card-text text-light">
+              Servicio impecable y profesionales capacitados para resolver cualquier inconveniente en el hogar.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- comentario 4 -->
+      <div data-aos="fade-down" class="col">
+        <div class="card rounded-card shadow-lg p-4 card-color" style="width: 18rem; overflow: hidden;">
+          <div class="rounded-circle">
+            <img src="https://images.pexels.com/photos/3772519/pexels-photo-3772519.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top rounded-circle" alt="Imagen Redonda" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Luisa Martínez</h5>
+            <p class="card-text text-light">
+              Rápidos, eficientes y amables. Siempre cuentan con los mejores profesionales para cada tarea.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agrega el script para la librería AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</div>

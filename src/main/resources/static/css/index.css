@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+.letra-estilo-one{
+
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.contenedor-general{
+  width: 100%;
+  height: 100%;
+  margin-top: 70px;
+
+}
+/* imagen del fonde del hero  */
+
+.fondo-seccion {
+  position: relative;
+}
+
+.fondo-seccion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+}
+
+
+.logo {
+  width: 200px; /* Tamaño inicial */
+  height: auto;
+  transition: width 0.5s ease; /* Agrega una transición suave al cambiar el tamaño */
+}
+
+
+.contenedor-titulo{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.titulo-1 {
+  position: absolute;
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: rgb(255, 255, 255); 
+  font-size: 15px;
+
+}
+.wwihd section{
+  width: 100%;
+  height: auto;
+}
+
+/* fin fondo seccion */
+
+
+/* titulo experiencia de nuestros usuarios */
+
+
+
+.titulo-experiencia-usuario {
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: transparent; /* Inicialmente, hacemos el texto transparente */
+  font-size: 30px;
+  display: inline-block; /* Necesario para animar letras individualmente */
+  animation: fadeInOut 4s infinite; /* 4s es la duración total de la animación, ajusta según necesites */
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    color: transparent; /* Al inicio y al final, el texto es transparente */
+  }
+  50% {
+    color: aliceblue; /* A la mitad de la animación, el texto es visible */
+  }
+}
+
+.titulo-hero {
+  margin-top: 15px;
+  color: #ffffff;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 2em;
+  position: relative;
+  display: inline-block;
+  animation: changeColor 4s infinite alternate;
+}
+
+@keyframes changeColor {
+  0% {
+    color: #ffffff; /* Blanco al inicio */
+  }
+  50% {
+    color: #000000; /* Negro a la mitad de la animación */
+  }
+  100% {
+    color: #ffffff; /* Blanco al final */
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 80px; /* Tamaño para pantallas pequeñas */
+  }
+}
+/* Estilo general para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo del "cuerpo" de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: #9A76A6; /* Color de fondo de la barra de desplazamiento */
+}
+
+/* Estilo del "pulgar" de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background-color: #8c519e;  /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 6px; /* Borde redondeado del pulgar */
+}
+
+/* Estilo del "pulgar" de la barra de desplazamiento cuando está en hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8933a3; /* Color del pulgar de la barra de desplazamiento en hover */
+}

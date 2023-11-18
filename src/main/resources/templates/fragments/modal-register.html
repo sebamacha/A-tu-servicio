@@ -1,0 +1,21 @@
+<div th:fragment="modal-register">
+
+<script>
+  var typeUser = document.getElementById("typeUser");
+  console.log("Hola");
+  typeUser.addEventListener("change", function (e) {
+    if (typeUser.value == "2") {
+      console.log("elegío");
+      console.log(typeUser.value);
+      document.getElementById("Selector").innerHTML = `
+          <div class="contenedor-check color-login-form">
+              <select 
+                class="form-select color-login-form form-select-sm"
+                aria-label="Small select example">
+                <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}" class="color-login-form" ></option>
+              </select>
+            </div>`;
+    } else {
+    }
+  });
+</script>

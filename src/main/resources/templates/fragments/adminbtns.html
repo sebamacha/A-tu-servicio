@@ -1,0 +1,14 @@
+<div class="my-3 text-center" th:fragment="adminbtns" xmlns:th="http://www.w3.org/1999/xhtml">
+        <div class="btn-group">
+        <a class="btn" th:classappend="${currentRole == 'CLIENT' ? 'btn-primary active' : 'btn-outline-primary'}" th:href="@{/admin/dashboard}">Clientes</a></button>
+
+        <a  class="btn" th:classappend="${currentRole == 'SUPPLIER' ? 'btn-primary active' : 'btn-outline-primary'}" th:href="@{/admin/suppliers}">Proveedores</a></button>
+
+        <a  class="btn" th:classappend="${currentRole == 'MODERATOR' ? 'btn-primary active' : 'btn-outline-primary'}" th:href="@{/admin/moderators}">Moderadores</a></button>
+
+        <a  class="btn" th:classappend="${currentRole == 'ADMIN' ? 'btn-primary active' : 'btn-outline-primary'}" th:href="@{/admin/admins}">Administradores</a></button>
+
+        <a  class="btn" th:classappend="${currentRole == 'CATEGORY' ? 'btn-primary active' : 'btn-outline-primary'}"  th:href="@{/admin/categories}">Categorias</a></button>
+
+        </div>
+</div>

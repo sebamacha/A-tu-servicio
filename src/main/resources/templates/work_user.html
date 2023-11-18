@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head th:replace="fragments/head :: head"></head>
+  <link th:href="@{/css/comment.css}" rel="stylesheet" />
+
+  <body>
+  <div class="contenedor-general fondo-seccion">
+      <nav th:replace="fragments/navbar :: navbar"></nav>
+
+
+    <!-- Contentedor principañ -->
+
+ 
+
+<section class="py-5 fondo-seccion text-center " style="margin-top: 70px;">
+  
+  <div style="margin-top: 90px;" th:replace="fragments/work_detail :: work_detail"></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</section>
+    <!-- <div class="container-fluid color">
+      <div
+        id="myCarousel"
+        class="carousel carousel-static slide color"
+        data-ride="carousel">
+        <div
+          class="carousel-inner color"
+          th:each="image, imageStart : ${service.imageGallery}">
+          <div
+            th:attr="class=${imageStart.index == 0 ? 'carousel-item active' : 'carousel-item'}">
+            <img
+              th:src="'/image/' + ${image}"
+              class="d-block w-100 color"
+              alt="Imagen 1" />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev color"
+          href="#myCarousel"
+          role="button"
+          data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#myCarousel"
+          role="button"
+          data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+    </div>
+  </div>   -->
+ 
+    <footer th:replace="fragments/footer :: footer"></footer>
+
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/head :: head"></head>
+<link th:href="@{/css/comment.css}" rel="stylesheet" />
+
+
+<body>
+  <header>
+    <nav th:replace="fragments/navbar :: navbar"></nav>
+  </header>
+
+  <!-- Contentedor principal -->
+  <div class="container-general fondo-seccion pt-5 pb-5">
+
+    <div class="container text-center">
+      <h1 class="text-light mt-5">Tu Perfil Profesional</h1>
+      <div th:if="${error != null}">
+        <h2 th:text="${error}"></h2>
+      </div>
+    </div>
+    <div th:if="${exito != null}" class="card text-white bg-success mb-3 mensajeExito">
+      <div class="card-body">
+        <h5 class="card-title">Éxito!</h5>
+        <p class="card-text" th:text="${exito}"></p>
+      </div>
+    </div>
+    <div class="container text-center pt-3 pb-4">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+      <!-- <form th:action="@{/supplier/}" method="GET"> -->
+
+      <div class="row align-items-center">
+        <div class="col">
+          <div data-aos="fade-down" class="card rounded-card shadow-lg p-3 card-color"
+            style="width: 18rem; overflow: hidden">
+            <!-- Contenedor para la imagen redonda -->
+            <div class="rounded-5">
+              <img th:src="@{/image/{imageId}(imageId=${supplier.imageCard})}" class="card-img-top rounded-5"
+                alt="Imagen" />
+            </div>
+            <div class="card-body text-light">
+              <h5 th:text="'Hola '+${supplier.name}+'!'" class="card-title"></h5>
+              <p th:text="'Email: '+${supplier.email}" class="card-text"></p>
+
+              <p class="fs-2 fw-semibold" th:text="${supplier.category.name}"></p>
+              <p class="fs-2 fw-semibold" th:text="'$ ' +${supplier.priceHour} + ' /hora'"></p>
+              <div class="row">
+                <div class="col"><i class="fa-solid fa-location-dot"></i>
+                  <p th:text="${supplier.city} + ', ' + ${supplier.province}" class="card-text"></p>
+                </div>
+              </div>
+              <!-- calificaciones -->
+              <div class="rating">
+                <!-- La calificación se redondea y se convierte en un entero para determinar cuántas estrellas llenar -->
+                <!-- <th:block th:each="star : ${#numbers.sequence(1, calificacion)}">
+                  <span>☆</span>
+                </th:block> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- comentario -->
+        <div class="col">
+          <div data-aos="fade-down" class="card rounded-card shadow-lg p-3 card-color"
+            style="width: 25rem; overflow: hidden">
+            <!-- Contenedor para la imagen redonda -->
+
+
+            <div class="card-body text-light">
+              <h5>Detalle de tus servicios</h5>
+              <p th:text="${service.description}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+                pariatur a aliquam, labore eaque aut
+                tenetur facere repellendus. Ipsam fugit suscipit ipsa nulla deserunt, repellat consequuntur sunt
+                molestias hic maiores.</p>
+              <!-- <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea> -->
+              <!-- calificaciones -->
+              <!-- <p th:text="${supplier.comments.score}" class="card-text">
+               
+              </p>  -->
+
+              <!-- La calificación se redondea y se convierte en un entero para determinar cuántas estrellas llenar -->
+              <!-- <th:block th:each="star : ${#numbers.sequence(1, calificacion)}">
+                  <span>☆</span>
+                </th:block> -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div data-aos="fade-left" class="card rounded-card shadow-lg p-3 card-color"
+            style="width: 18rem; overflow: hidden">
+            <!-- Contenedor para la imagen redonda -->
+
+
+            <div class="card-body ">
+
+              <a th:href="@{/supplier/workEdit}"><button class="btn btn-outline-light w-30 py-2" type="submit">Modificar
+                  datos</button></a>
+              <!-- calificaciones -->
+              <!-- </form> -->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <h1 class="text-light">Fotos de tus proyectos</h1>
+    </div>
+    <div class="container p-5">
+
+      <div id="carouselExample" class="carousel slide " style="max-width: 700px; margin: auto;">
+        <div class="carousel-inner ">
+          <div th:each="image, imageStart : ${service.imageGallery}"
+            th:class="${imageStart.index == 0 ? 'carousel-item active' : 'carousel-item'}">
+            <img th:src="@{'/image/' + ${image}}"
+              class="d-block w-100 img-fluid card rounded-card shadow-lg p-3 card-color" alt="Imagen"
+              style="max-height: 500px;" />
+          </div>
+        </div>
+        <button class="carousel-control-prev rounded-5" type="button" data-bs-target="#carouselExample"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next rounded-5" type="button" data-bs-target="#carouselExample"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+
+    </div>
+
+
+
+  </div>
+  <footer th:replace="fragments/footer :: footer"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

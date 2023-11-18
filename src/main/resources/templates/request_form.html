@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head th:replace="fragments/head :: head"></head>
+  <link th:href="@{/css/comment.css}" rel="stylesheet" />
+
+  <body>
+    <nav th:replace="fragments/navbar :: navbar"></nav>
+
+    <section
+      style="margin-top: 35px;"
+      class="py-5 fondo-seccion text-center">
+      <div class="contenedor-titulo">
+        <h1 class="display-4 titulo-1">Solicitud de trabajo</h1>
+      </div>
+      <div th:replace="fragments/request_detail :: request_detail"></div>
+    </section>
+
+    <!-- <div class="container mt-3">
+        <form class="form-group" th:action="@{/contract/send/{idSupplier}(idSupplier=${supplier.id})}" method="POST">
+            <div class="panel">
+                <div class="row">
+                    <div class="col">
+                        <div class="panel text-center p-3">
+                            <img class="rounded-circle" th:src="@{/image/{imageId}(imageId=${supplier.image})}">
+                            <p class="fs-2 fw-bold" th:text="${supplier.name}"></p>
+                            <p>Cantidad de estrellas</p>
+                            <p class="fs-2 fw-semibold" th:text="${supplier.category.name}"></p>
+                            <p th:text="'$ ' +${service.priceHour} + ' /hora'"></p>
+
+                            <div class="row">
+                                <div class="col"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="col">
+                                     <p th:text="${supplier.country}"></p>
+                                <p th:text="${supplier.province}"></p>
+                                <p th:text="${supplier.city}"></p> 
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-8">
+                        <div class="panel">
+                            <div>
+                                <img class="card-img-top" th:src="@{/image/{imageId}(imageId=${supplier.imageCard})}">
+                            </div>
+                            <div>
+                                <div class="container d-flex flex-row">
+                                    <div th:each="image : ${service.imageGallery}">
+                                        <div class="card" style="width: 18rem;">
+                                            <img th:src="@{'/image/' + ${image}}" class="card-img-top" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            Descripción del servicio
+
+                        </div>
+                        <div>
+                            <p>Ingrese una descripción del trabajo que necesita</p>
+                            <textarea name="description"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </form>
+    </div> --->
+    <!--Footer-->
+    <footer th:replace="fragments/footer :: footer"></footer>
+  </body>
+</html>
