@@ -1,0 +1,8 @@
+admin@admin ----- administrador
+Pass123456
+supa@supa -----proveedor
+Pass123456
+javier@javier ------cleinte 
+Pass123456
+
+
